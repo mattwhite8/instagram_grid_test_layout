@@ -25,6 +25,15 @@ header {
     margin: 0 auto;
 }
 
+.header-content > input {
+    display: none;
+}
+
+@media (min-width: 700px) {
+    .header-content > input {
+        display: block;
+    }
+}
 nav > ul {
     list-style: none;
     margin: 0;
@@ -42,18 +51,47 @@ main {
 
 .user {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(3, auto);
+}
+
+.user > h1 {
+    margin: 0;
+}
+
+.user > p {
+    grid-column: 1 / -1;
+}
+
+.user > .stats {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-around;
 }
 
 .user > img {
     border-radius: 50%;
-    width: 150px;
+    width: 70px;
     justify-self: center;
 }
 
-.user-info {
-    display: grid;
-    grid-template-rows: repeat(auto, 1fr);
+@media (min-width: 700px) {
+    .user {
+        grid-template-columns: 1fr 2fr;
+    }
+    .user > p {
+        grid-column: auto;
+    }
+    .user > .stats {
+        grid-column: auto;
+        grid-row: auto;
+        display: block;
+    }
+    .user > img {
+        width: 152px;
+        grid-row: 1 / -1;
+    }
 }
 
 .user-nav {
@@ -67,6 +105,16 @@ main {
 
 .news-feed {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+@media (min-width: 700px) {
+    .news-feed {
+        grid-gap: 20px;
+    }
+}
+
+.news-feed > img {
+    width: 100%;
 }

@@ -115,6 +115,12 @@ main {
     }
 }
 
+@media (max-width: 320px) {
+    .news-feed {
+        grid-template-columns: repeat(1, auto);
+    }
+}
+
 .news-feed > img {
     width: 100%;
 }

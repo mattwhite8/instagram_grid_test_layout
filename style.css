@@ -14,6 +14,7 @@ header {
     left: 0;
     right: 0;
     height: 45px;
+    z-index: 2;
 }
 
 .header-content {
@@ -123,4 +124,15 @@ main {
 
 .news-feed > img {
     width: 100%;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container > .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
 }
